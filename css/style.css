@@ -19,7 +19,7 @@ body {
   --pink: #5e45b8;
   --light-pink: #3a3ae4;
   --gray: #4a4a4a;
-  --primary-color: rgb(11, 78, 179);
+  --light-gray: #dcdcdc;
 }
 
 /* Global Stylings */
@@ -63,26 +63,29 @@ input {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 4px;
+  height: 8px;
   width: 100%;
-  background-color: #dcdcdc;
+  background-color: #d9d9d9;
   z-index: -1;
 }
 
 .progress {
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   width: 0%;
   transition: 0.3s;
 }
 
 .progress-step {
-  width: 2.1875rem;
-  height: 2.1875rem;
-  background-color: #dcdcdc;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--light-gray);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .progress-step::before {
@@ -92,29 +95,28 @@ input {
 
 .progress-step::after {
   content: attr(data-title);
+  text-wrap: nowrap;
   position: absolute;
-  top: calc(100% + 0.5rem);
-  font-size: 0.85rem;
+  top: 110%;
   color: #666;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .progress-step-active {
-  background-color: var(--primary-color);
-  color: #f3f3f3;
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* Form */
 .form {
   width: clamp(320px, 30%, 430px);
   margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
-  padding: 1.5rem;
 }
 
 .form-step {
   display: none;
-  transform-origin: top;
+  transform-origin: left;
   animation: animate 0.5s;
 }
 
@@ -128,7 +130,7 @@ input {
 
 @keyframes animate {
   from {
-    transform: scale(1, 0);
+    transform: scale(0, 1);
     opacity: 0;
   }
   to {
@@ -137,10 +139,15 @@ input {
   }
 }
 
+/* Cards */
+.active-card {
+  box-shadow: 2px 3px 12px 0px rgba(74, 74, 74, 0.25);
+}
+
 /* Button */
 .btns-group {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -148,15 +155,16 @@ input {
   padding: 0.75rem;
   display: block;
   text-decoration: none;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   color: #f3f3f3;
   text-align: center;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: 0.3s;
+  width: 50%;
 }
 .btn:hover {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary);
 }
 
 /* .nextbtn {

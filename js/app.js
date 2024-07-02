@@ -24,7 +24,8 @@ prevBtns.forEach((btn) => {
 
 function updateFormSteps() {
   formSteps.forEach((formStep) => {
-    formStep.classList.contains("form-step-active") && formStep.classList.remove("form-step-active");
+    formStep.classList.contains("form-step-active") &&
+      formStep.classList.remove("form-step-active");
   });
 
   formSteps[formStepsNum].classList.add("form-step-active");
@@ -41,5 +42,11 @@ function updateProgressbar() {
 
   const progressActive = document.querySelectorAll(".progress-step-active");
 
-  progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+  progress.style.width =
+    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "cards",
+  grabCursor: true,
+});
