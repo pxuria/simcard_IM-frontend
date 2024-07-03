@@ -23,6 +23,7 @@ html {
   --light-pink: #3a3ae4;
   --gray: #4a4a4a;
   --light-gray: #dcdcdc;
+  --yellow: #fecd48;
 }
 
 /* Global Stylings */
@@ -113,7 +114,9 @@ input {
 
 /* Form */
 .form {
-  width: 600px;
+  /* width: 600px; */
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
 }
 
@@ -140,6 +143,26 @@ input {
     transform: scale(1, 1);
     opacity: 1;
   }
+}
+
+.card-form {
+  border-radius: 24px;
+  background: rgba(232, 232, 232, 0.3);
+  backdrop-filter: blur(22.5px);
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+}
+
+.cricle-card {
+  position: absolute;
+  left: -25%;
+  bottom: -25%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(91, 136, 228, 0.4);
+  filter: blur(60px);
 }
 
 /* Cards */
@@ -188,14 +211,37 @@ input {
   padding: 0.75rem;
   display: block;
   text-decoration: none;
-  background-color: var(--primary);
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: 0.3s;
 }
-.btn:hover {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary);
+.btn-next:hover {
+  box-shadow: 0 0 0 2px #f8f9fa, 0 0 0 4px var(--primary);
+}
+
+.btn-prev:hover {
+  box-shadow: 0 0 0 2px #f8f9fa, 0 0 0 4px var(--gray);
+}
+
+.btn-prev {
+  background-color: var(--yellow);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding-inline: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 300px;
+  height: 45px;
+  transition: all 200ms ease-out;
+  gap: 0.25rem;
+}
+
+.btn-prev span {
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .btn-next {

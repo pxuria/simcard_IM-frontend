@@ -4,6 +4,8 @@ const progress = document.getElementById("progress");
 const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progress-step");
 const title = document.querySelector("#title");
+const step1Svg = document.querySelectorAll(".step-1-svg");
+const step2Svg = document.querySelectorAll(".step-2-svg");
 
 let formStepsNum = 0;
 
@@ -11,10 +13,26 @@ nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     console.log(formStepsNum);
     if (formStepsNum === 0) {
-      console.log("yes");
       title.classList.remove("block");
       title.classList.add("hidden");
+      // step 1 svg display
+      step1Svg.forEach((svg) => {
+        svg.classList.remove("block");
+        svg.classList.add("hidden");
+      });
+      step2Svg.forEach((svg) => {
+        svg.classList.remove("hidden");
+        svg.classList.add("block");
+      });
     }
+    // step 2 svg display
+    // else if (formStepsNum === 1) {
+    //   step2Svg.forEach((svg) => {
+    //     svg.classList.remove("block");
+    //     svg.classList.add("hidden");
+    //   });
+    // }
+
     formStepsNum++;
     updateFormSteps();
     updateProgressbar();
@@ -29,6 +47,16 @@ prevBtns.forEach((btn) => {
     if (formStepsNum === 0) {
       title.classList.remove("hidden");
       title.classList.add("block");
+      // step 1 svg display
+      step1Svg.forEach((svg) => {
+        svg.classList.remove("hidden");
+        svg.classList.add("block");
+      });
+      step2Svg.forEach((svg) => {
+        console.log("delete step 2");
+        svg.classList.remove("block");
+        svg.classList.add("hidden");
+      });
     }
   });
 });
