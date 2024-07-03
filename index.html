@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./packages/tailwindcss-v3.4.4.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
@@ -12,7 +15,7 @@
     <title>Registraion Form</title>
   </head>
 
-  <body class="relative min-h-screen overflow-x-hidden">
+  <body class="relative min-h-full overflow-x-hidden">
     <!-- top right svg first page -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,14 +52,21 @@
       height="463"
       viewBox="0 0 542 463"
       fill="none"
-      class="absolute bottom-[-20px] left-[-5rem] z-[-1] hidden"
+      class="absolute bottom-0 left-0 z-[-1]"
     >
       <path
         d="M185 26C99.4 -38.8 4 33.3333 -33 77.5V482.5H532C554.833 459.667 549.5 393.7 345.5 312.5C90.5 211 292 107 185 26Z"
         fill="url(#paint0_linear_26_248)"
       />
       <defs>
-        <linearGradient id="paint0_linear_26_248" x1="49" y1="19.5" x2="588.5" y2="665" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="paint0_linear_26_248"
+          x1="49"
+          y1="19.5"
+          x2="588.5"
+          y2="665"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stop-color="#3A3AE4" />
           <stop offset="1" stop-color="#E45B88" />
         </linearGradient>
@@ -68,17 +78,26 @@
       <div class="progressbar w-[700px] mx-auto mb-[5rem]">
         <div class="progress" id="progress"></div>
 
-        <div class="progress-step progress-step-active" data-title="انتخاب شماره"></div>
+        <div
+          class="progress-step progress-step-active"
+          data-title="انتخاب شماره"
+        ></div>
         <div class="progress-step" data-title="تکمیل فرم اطلاعات"></div>
         <div class="progress-step" data-title="روش پرداخت"></div>
         <div class="progress-step" data-title="صفحه تکمیل سفارش"></div>
       </div>
 
-      <h2 class="text-center text-black font-semibold text-2xl mb-[3rem]">شماره مد نظر خود را انتخاب نمایید</h2>
+      <h2
+        class="text-center text-black font-semibold text-2xl mb-[3rem]"
+        id="title"
+      >
+        شماره مد نظر خود را انتخاب نمایید
+      </h2>
 
       <form class="form">
-        <!-- Steps -->
-        <div class="form-step form-step-active">
+        <!-- start Steps -->
+        <!-- step 1 -->
+        <div class="form-step form-step-active" id="numSelection">
           <!-- Cards -->
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -88,25 +107,44 @@
               >
                 <!-- 1 -->
                 <div
-                  class="w-full rounded-[12px] bg-[#ededed] flex px-3 py-2 cursor-pointer gap-2 items-center flex-wrap justify-between flex-row"
+                  class="w-full rounded-[12px] bg-[#ededed] flex px-3 py-2 cursor-pointer gap-2 items-center flex-wrap justify-between flex-row relative z-0"
                 >
+                  <div class="absolute top-[-25%] z-1 left-[5%]">
+                    <span
+                      class="bg-[#5E45B8] text-[#f8f9fa] px-2 rounded-tr-lg rounded-tl-lg text-xs"
+                      >VIP</span
+                    >
+                  </div>
                   <div class="bg-[#fff] px-8 py-2 rounded">
                     <span class="font-semibold text-xl">(253) 677-0596</span>
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
                         <span class="validity-period rounded-lg">3 ماهه</span>
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -120,18 +158,33 @@
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
-                        <span class="validity-period rounded-lg">3 ماهه</span>
+                        <span class="validity-period rounded-lg inactive-number"
+                          >غیر فعال</span
+                        >
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -145,18 +198,31 @@
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
                         <span class="validity-period rounded-lg">3 ماهه</span>
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -170,18 +236,31 @@
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
                         <span class="validity-period rounded-lg">3 ماهه</span>
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -199,18 +278,31 @@
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
                         <span class="validity-period rounded-lg">3 ماهه</span>
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -228,18 +320,31 @@
                   </div>
                   <div class="flex flex-row gap-2">
                     <div class="flex flex-col gap-2 justify-evenly">
-                      <div class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around">
+                      <div
+                        class="flex flex-row gap-1 items-center bg-[#fff] px-3 py-1 rounded-lg justify-around"
+                      >
                         <span class="price-currency">تومان</span>
                         <span class="price">340,000,000</span>
                       </div>
-                      <div class="flex flex-row gap-1 items-center justify-between" dir="rtl">
+                      <div
+                        class="flex flex-row gap-1 items-center justify-between"
+                        dir="rtl"
+                      >
                         <span class="validity">اعتبار :</span>
                         <span class="validity-period rounded-lg">3 ماهه</span>
                       </div>
                     </div>
-                    <div class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg">
+                    <div
+                      class="bg-[#fff] flex flex-col gap-2 items-center py-2 px-3 rounded-lg"
+                    >
                       <span class="">اوکراین</span>
-                      <img src="./assets/ukrain.svg" width="32" height="24" alt="اوکراین" class="w-8 h-6" />
+                      <img
+                        src="./assets/ukrain.svg"
+                        width="32"
+                        height="24"
+                        alt="اوکراین"
+                        class="w-8 h-6"
+                      />
                     </div>
                   </div>
                 </div>
@@ -252,7 +357,9 @@
             </button>
           </div>
         </div>
-        <div class="form-step">
+
+        <!-- step 2 -->
+        <div class="form-step" id="filling">
           <div class="input-group">
             <label for="phone">Phone</label>
             <input type="text" name="phone" id="phone" />
@@ -266,7 +373,9 @@
             <button type="button" class="btn btn-next">Next</button>
           </div>
         </div>
-        <div class="form-step">
+
+        <!-- step 3 -->
+        <div class="form-step" id="payment">
           <div class="input-group">
             <label for="dob">Date of Birth</label>
             <input type="date" name="dob" id="dob" />
@@ -280,20 +389,27 @@
             <button type="button" class="btn btn-next">Next</button>
           </div>
         </div>
-        <div class="form-step">
+
+        <!-- step 4 -->
+        <div class="form-step" id="result">
           <div class="input-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" />
           </div>
           <div class="input-group">
             <label for="confirmPassword">Confirm Password</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" />
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
           </div>
           <div class="btns-group">
             <button type="button" class="btn btn-prev">Previous</button>
             <button type="submit" class="btn">submit</button>
           </div>
         </div>
+        <!-- end steps -->
       </form>
     </main>
   </body>

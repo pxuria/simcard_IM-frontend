@@ -170,7 +170,11 @@ input {
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  padding-inline: 2rem;
+  padding-inline: 1.25rem;
+}
+
+.inactive-number {
+  color: #d01010;
 }
 
 /* Button */

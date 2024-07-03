@@ -3,11 +3,18 @@ const nextBtns = document.querySelectorAll(".btn-next");
 const progress = document.getElementById("progress");
 const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progress-step");
+const title = document.querySelector("#title");
 
 let formStepsNum = 0;
 
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    console.log(formStepsNum);
+    if (formStepsNum === 0) {
+      console.log("yes");
+      title.classList.remove("block");
+      title.classList.add("hidden");
+    }
     formStepsNum++;
     updateFormSteps();
     updateProgressbar();
@@ -19,6 +26,10 @@ prevBtns.forEach((btn) => {
     formStepsNum--;
     updateFormSteps();
     updateProgressbar();
+    if (formStepsNum === 0) {
+      title.classList.remove("hidden");
+      title.classList.add("block");
+    }
   });
 });
 
