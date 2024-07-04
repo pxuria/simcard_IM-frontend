@@ -260,6 +260,41 @@ input:not(:placeholder-shown) {
   transition: all 300ms ease-in-out;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: var(--light-primary);
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff;
+  transition: all 200ms ease-in;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.1);
+  background-color: var(--primary);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-button-prev {
+  left: 25%;
+  top: 100%;
+}
+
+.swiper-button-next {
+  right: 25%;
+  top: 100%;
+}
+
 /* Button */
 .btns-group {
   display: flex;
