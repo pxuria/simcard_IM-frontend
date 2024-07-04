@@ -1,3 +1,4 @@
+// variables
 const prevBtns = document.querySelectorAll(".btn-prev");
 const nextBtns = document.querySelectorAll(".btn-next");
 const progress = document.getElementById("progress");
@@ -9,6 +10,13 @@ const step2Svg = document.querySelectorAll(".step-2-svg");
 
 let formStepsNum = 0;
 
+// packages
+var swiper = new Swiper(".mySwiper", {
+  effect: "cards",
+  grabCursor: true,
+});
+
+// eventlisteners
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     console.log(formStepsNum);
@@ -61,10 +69,10 @@ prevBtns.forEach((btn) => {
   });
 });
 
+// functions
 function updateFormSteps() {
   formSteps.forEach((formStep) => {
-    formStep.classList.contains("form-step-active") &&
-      formStep.classList.remove("form-step-active");
+    formStep.classList.contains("form-step-active") && formStep.classList.remove("form-step-active");
   });
 
   formSteps[formStepsNum].classList.add("form-step-active");
@@ -81,11 +89,5 @@ function updateProgressbar() {
 
   const progressActive = document.querySelectorAll(".progress-step-active");
 
-  progress.style.width =
-    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+  progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
-
-var swiper = new Swiper(".mySwiper", {
-  effect: "cards",
-  grabCursor: true,
-});
