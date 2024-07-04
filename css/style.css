@@ -242,6 +242,24 @@ input:not(:placeholder-shown) {
   color: #d01010;
 }
 
+.swiper {
+  width: 100%;
+  overflow: unset;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 33%;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
 /* Button */
 .btns-group {
   display: flex;
