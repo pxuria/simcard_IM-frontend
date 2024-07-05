@@ -16,17 +16,6 @@ const selected = dropdown.querySelector(".selected");
 
 let formStepsNum = 0;
 
-// const socials = [
-//   { id: 0, social: "telegram", img: "./assets/telegram.svg" },
-//   { id: 1, social: "instagram", img: "./assets/instagram.svg" },
-//   { id: 2, social: "openai", img: "./assets/openai.svg" },
-//   { id: 3, social: "fiverr", img: "./assets/fiverr.svg" },
-//   { id: 4, social: "whatsapp", img: "./assets/whatsapp.svg" },
-//   { id: 5, social: "linkedin", img: "./assets/linkedin.svg" },
-//   { id: 6, social: "tiktok", img: "./assets/tiktok.svg" },
-//   { id: 7, social: "discord", img: "./assets/discord.svg" },
-// ];
-
 // packages
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
@@ -59,6 +48,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // eventlisteners
+// buttons
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (formStepsNum === 0) {
@@ -75,13 +65,17 @@ nextBtns.forEach((btn) => {
       });
     }
     // step 2 svg display
-    // else if (formStepsNum === 1) {
-    //   step2Svg.forEach((svg) => {
-    //     svg.classList.remove("block");
-    //     svg.classList.add("hidden");
-    //   });
-    // }
+    else if (formStepsNum === 1) {
+      step2Svg.forEach((svg) => {
+        svg.classList.remove("block");
+        svg.classList.add("hidden");
+      });
+    }
 
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     formStepsNum++;
     updateFormSteps();
     updateProgressbar();
@@ -90,6 +84,10 @@ nextBtns.forEach((btn) => {
 
 prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     formStepsNum--;
     updateFormSteps();
     updateProgressbar();
@@ -110,6 +108,7 @@ prevBtns.forEach((btn) => {
   });
 });
 
+// usage input selection
 select.addEventListener("click", () => {
   select.classList.toggle("select-clicked");
   caret.classList.toggle("rotate-[-90deg]");
@@ -162,11 +161,3 @@ function updateProgressbar() {
 
   progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
-
-// addSocialList(socials);
-// function addSocialList(socials) {
-//   const menu = document.querySelector(".usage-menu");
-//   socials.forEach((el) =>
-//     menu.append(`<li><span>${el.social}</span> <img src="${el.img}" alt="${el.social}" class="h-5 w-5"/></li>`)
-//   );
-// }

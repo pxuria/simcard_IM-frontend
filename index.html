@@ -88,7 +88,7 @@
       <form class="form">
         <!-- start Steps -->
         <!-- step 1 -->
-        <div class="form-step form-step-active w-[600px] w-full" id="numSelection">
+        <div class="form-step form-step-active w-[90%] w-full" id="numSelection">
           <!-- Cards -->
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -538,9 +538,9 @@
         </div>
 
         <!-- step 2 -->
-        <div class="form-step" id="filling">
+        <div class="form-step w-[90%]" id="filling">
           <div class="card-form py-8 px-6">
-            <h3 class="text-center text-2xl mb-20 text-[#333] font-semibold" dir="rtl">
+            <h3 class="text-center text-2xl mt-4 mb-20 text-[#333] font-semibold" dir="rtl">
               فرم اطلاعات خود را تکمیل نمایید.
             </h3>
 
@@ -601,7 +601,7 @@
             />
 
             <!-- form -->
-            <div class="flex flex-row justify-center flex-wrap gap-6 mb-16" dir="rtl">
+            <div class="flex flex-row justify-center flex-wrap gap-6" dir="rtl">
               <!-- username -->
               <div class="input-group">
                 <label for="username">نام کاربری :</label>
@@ -749,23 +749,55 @@
         </div>
 
         <!-- step 3 -->
-        <div class="form-step" id="payment">
-          <div class="input-group">
-            <label for="dob">Date of Birth</label>
-            <input type="date" name="dob" id="dob" />
-          </div>
-          <div class="input-group">
-            <label for="ID">National ID</label>
-            <input type="number" name="ID" id="ID" />
-          </div>
-          <!-- buttons -->
-          <div class="btns-group">
-            <button type="button" class="btn btn-prev">
-              <span>بازگشت به صفحه قبل</span>
-            </button>
-            <button type="button" class="btn btn-next">
-              <span>تکمیل سفارش</span>
-            </button>
+        <div class="form-step w-[90%]" id="payment">
+          <div class="card-form py-8 px-6">
+            <h3 class="text-center text-2xl mt-4 mb-20 text-[#333] font-semibold" dir="rtl">
+              روش پرداخت خود را انتخاب کنید.
+            </h3>
+
+            <div class="flex flex-row flex-wrap items-center justify-center gap-6">
+              <!-- card -->
+              <div
+                class="flex flex-col gap-4 items-center bg-[#fff] w-[20%] px-2 py-1 rounded-lg cursor-pointer transition-all ease-in during-300 border-2 border-solid border-[#dcdcdc] hover:border-[#2f68dd]"
+              >
+                <img src="./assets/banking.jpg" alt="banking" class="rounded max-w-full h-auto o bject-cover" />
+                <span class="text-base font-semibold">پرداخت با ارز دیجیتال</span>
+              </div>
+
+              <!-- card -->
+              <div
+                class="flex flex-col gap-4 items-center bg-[#fff] w-[20%] px-2 py-1 rounded-lg cursor-pointer transition-all ease-in during-300 border-2 border-solid border-[#dcdcdc] hover:border-[#2f68dd]"
+              >
+                <img src="./assets/banking.jpg" alt="banking" class="rounded max-w-full h-auto o bject-cover" />
+                <span class="text-base font-semibold">پرداخت با ارز دیجیتال</span>
+              </div>
+
+              <!-- card -->
+              <div
+                class="flex flex-col gap-4 items-center bg-[#fff] w-[20%] px-2 py-1 rounded-lg cursor-pointer transition-all ease-in during-300 border-2 border-solid border-[#dcdcdc] hover:border-[#2f68dd]"
+              >
+                <img src="./assets/banking.jpg" alt="banking" class="rounded max-w-full h-auto o bject-cover" />
+                <span class="text-base font-semibold">پرداخت با ارز دیجیتال</span>
+              </div>
+
+              <!-- card -->
+              <div
+                class="flex flex-col gap-4 items-center bg-[#fff] w-[20%] px-2 py-1 rounded-lg cursor-pointer transition-all ease-in during-300 border-2 border-solid border-[#dcdcdc] hover:border-[#2f68dd]"
+              >
+                <img src="./assets/banking.jpg" alt="banking" class="rounded max-w-full h-auto o bject-cover" />
+                <span class="text-base font-semibold">پرداخت با ارز دیجیتال</span>
+              </div>
+            </div>
+
+            <!-- buttons -->
+            <div class="btns-group">
+              <button type="button" class="btn btn-prev">
+                <span>بازگشت به صفحه قبل</span>
+              </button>
+              <button type="button" class="btn btn-next">
+                <span>تکمیل سفارش</span>
+              </button>
+            </div>
           </div>
         </div>
 
