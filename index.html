@@ -10,7 +10,7 @@
     <title>Registraion Form</title>
   </head>
 
-  <body class="relative min-h-full overflow-x-hidden">
+  <body class="relative min-h-full overflow-x-hidden bg-[#f8f9fa]">
     <!-- top right svg first page -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@
       height="620"
       viewBox="0 0 359 620"
       fill="none"
-      class="fixed top-0 right-[-2.5rem] z-[-1] step-1-svg"
+      class="fixed top-0 right-[-2.5rem] z-[-1]"
     >
       <path
         d="M98.5 255.5C-20.7 187.1 -6.83337 56.6667 15 0H359.5V619.5C343 604.667 306.8 557.6 294 488C278 401 247.5 341 98.5 255.5Z"
@@ -47,7 +47,7 @@
       height="463"
       viewBox="0 0 542 463"
       fill="none"
-      class="fixed bottom-0 left-0 z-[-1] step-1-svg"
+      class="fixed bottom-0 left-0 z-[-1]"
     >
       <path
         d="M185 26C99.4 -38.8 4 33.3333 -33 77.5V482.5H532C554.833 459.667 549.5 393.7 345.5 312.5C90.5 211 292 107 185 26Z"
@@ -544,11 +544,12 @@
               فرم اطلاعات خود را تکمیل نمایید.
             </h3>
 
+            <!-- selected number -->
             <div
-              class="border-2 border-solid border-[#2F68DD] flex flex-row items-center rounded-lg w-fit mx-auto mb-6"
+              class="border-2 border-solid border-[#2F68DD] flex flex-row items-center rounded-lg w-fit mx-auto mb-8 bg-[#fff]"
             >
               <div class="flex items-center gap-2 px-4">
-                <span class="text-[#2F2F2F] font-semibold text-xl">(253) 677-0596</span>
+                <span class="text-[#2F2F2F] font-semibold text-xl select-none">(253) 677-0596</span>
 
                 <!-- cart svg -->
                 <svg
@@ -564,12 +565,12 @@
                   />
                 </svg>
               </div>
-              <span class="bg-[#2F68DD] text-[#f8f9fa] px-4 py-2 h-full">شماره انتخابی</span>
+              <span class="bg-[#2F68DD] text-[#f8f9fa] px-4 py-2 h-full select-none">شماره انتخابی</span>
             </div>
 
-            <!-- circle -->
+            <!-- circle form -->
             <div class="cricle-card"></div>
-            <!-- svg vector -->
+            <!-- svg vector form -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="vector-card"
@@ -583,6 +584,7 @@
                 fill="#5E45B8"
               />
             </svg>
+
             <!-- hand simcard svg -->
             <img src="./assets/handSimcard.svg" alt="simcard" class="absolute -bottom-6 left-0 z-[-1] rotate-[7deg]" />
 
@@ -598,7 +600,8 @@
               class="absolute top-[-2%] right-[5%] z-[-1] w-[300px] h-[300px] rotate-[70deg]"
             />
 
-            <div class="flex flex-row justify-center flex-wrap gap-4 mb-16" dir="rtl">
+            <!-- form -->
+            <div class="flex flex-row justify-center flex-wrap gap-6 mb-16" dir="rtl">
               <!-- username -->
               <div class="input-group">
                 <label for="username">نام کاربری :</label>
@@ -661,51 +664,79 @@
               <!-- usage type -->
               <div class="input-group mt-2">
                 <label for="usage">نوع استفاده :</label>
-                <div class="relative w-full">
-                  <input
-                    type="text"
-                    name="usage"
-                    id="usage"
-                    class="cursor-pointer hover:bg-[#f8f9fa] transition-all ease-in during-300"
-                    readonly
-                  />
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-chevron-left absolute top-[50%] right-4 -translate-y-1/2 w-4 h-4 text-[#4A4A4A]"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
-                    />
-                  </svg>
-
+                <div class="dropdown w-full relative">
                   <div
-                    class="absolute left-8 top-1/2 -translate-y-1/2 flex flex-row-reverse items-center gap-2 justify-start"
+                    class="cursor-pointer hover:bg-[#ededed] transition-all ease-in during-300 bg-[#fff] flex flex-row-reverse flex-nowrap items-center justify-between w-full py-2 pl-4 pr-4 rounded-lg h-[3.25rem] border-2 border-solid border-[#2f68dd] select"
                   >
-                    <span class="font-semibold text-base">telegram</span>
+                    <div class="flex flex-row-reverse flex-nowrap gap-2 items-center selected">
+                      <span class="font-semibold text-base selected-social">telegram</span>
+                      <img src="./assets/telegram.svg" alt="telegram" class="w-6 h-6 selected-img" />
+                    </div>
+
+                    <!-- caret -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-telegram w-6 h-6 text-[#29A0DA]"
+                      class="bi bi-chevron-left w-4 h-4 text-[#4A4A4A] transition-all ease-in-out during-400 caret"
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+                        fill-rule="evenodd"
+                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
                       />
                     </svg>
                   </div>
-                </div>
 
-                <!-- usage list -->
-                <div class=""></div>
+                  <!-- usage list -->
+                  <ul class="usage-menu">
+                    <!-- telegram -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center active">
+                      <span class="font-semibold text-base">telegram</span>
+                      <img src="./assets/telegram.svg" alt="telegram" class="w-6 h-6" />
+                    </li>
+                    <!-- instagram -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">instagram</span>
+                      <img src="./assets/instagram.svg" alt="instagram" class="w-6 h-6" />
+                    </li>
+                    <!-- whatsapp -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">whatsapp</span>
+                      <img src="./assets/whatsapp.svg" alt="whatsapp" class="w-6 h-6" />
+                    </li>
+                    <!-- fiverr -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">fiverr</span>
+                      <img src="./assets/fiverr.svg" alt="fiverr" class="w-6 h-6" />
+                    </li>
+                    <!-- openai -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">openai</span>
+                      <img src="./assets/openai.svg" alt="openai" class="w-6 h-6" />
+                    </li>
+                    <!-- discord -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">discord</span>
+                      <img src="./assets/discord.svg" alt="discord" class="w-6 h-6" />
+                    </li>
+                    <!-- linkedin -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">linkedin</span>
+                      <img src="./assets/linkedin.svg" alt="linkedin" class="w-6 h-6" />
+                    </li>
+                    <!-- tiktok -->
+                    <li class="flex flex-row gap-4 flex-nowrap items-center">
+                      <span class="font-semibold text-base">tiktok</span>
+                      <img src="./assets/tiktok.svg" alt="tiktok" class="w-6 h-6" />
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+
+            <!-- buttons -->
             <div class="btns-group">
               <button type="button" class="btn btn-prev">
                 <span>بازگشت به صفحه قبل</span>
@@ -727,9 +758,14 @@
             <label for="ID">National ID</label>
             <input type="number" name="ID" id="ID" />
           </div>
+          <!-- buttons -->
           <div class="btns-group">
-            <button type="button" class="btn btn-prev">Previous</button>
-            <button type="button" class="btn btn-next">Next</button>
+            <button type="button" class="btn btn-prev">
+              <span>بازگشت به صفحه قبل</span>
+            </button>
+            <button type="button" class="btn btn-next">
+              <span>تکمیل سفارش</span>
+            </button>
           </div>
         </div>
 

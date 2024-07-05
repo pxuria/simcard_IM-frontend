@@ -1,5 +1,10 @@
 [
-  { "id": 0, "social": "telegram", "svg": "" },
-  { "id": 1, "social": "instagram", "svg": "" },
-  { "id": 2, "social": "chatgpt", "svg": "" }
+  { "id": 0, "social": "telegram", "img": "./assets/telegram.svg" },
+  { "id": 1, "social": "instagram", "img": "./assets/instagram.svg" },
+  { "id": 2, "social": "openai", "img": "./assets/openai.svg" },
+  { "id": 3, "social": "fiverr", "img": "./assets/fiverr.svg" },
+  { "id": 4, "social": "whatsapp", "img": "./assets/whatsapp.svg" },
+  { "id": 5, "social": "linkedin", "img": "./assets/linkedin.svg" },
+  { "id": 6, "social": "tiktok", "img": "./assets/tiktok.svg" },
+  { "id": 7, "social": "discord", "img": "./assets/discord.svg" }
 ]

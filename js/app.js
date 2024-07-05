@@ -7,8 +7,25 @@ const progressSteps = document.querySelectorAll(".progress-step");
 const title = document.querySelector("#title");
 const step1Svg = document.querySelectorAll(".step-1-svg");
 const step2Svg = document.querySelectorAll(".step-2-svg");
+const dropdown = document.querySelector(".dropdown");
+const select = dropdown.querySelector(".select");
+const caret = dropdown.querySelector(".caret");
+const menu = dropdown.querySelector(".usage-menu");
+const options = dropdown.querySelectorAll(".usage-menu li");
+const selected = dropdown.querySelector(".selected");
 
 let formStepsNum = 0;
+
+// const socials = [
+//   { id: 0, social: "telegram", img: "./assets/telegram.svg" },
+//   { id: 1, social: "instagram", img: "./assets/instagram.svg" },
+//   { id: 2, social: "openai", img: "./assets/openai.svg" },
+//   { id: 3, social: "fiverr", img: "./assets/fiverr.svg" },
+//   { id: 4, social: "whatsapp", img: "./assets/whatsapp.svg" },
+//   { id: 5, social: "linkedin", img: "./assets/linkedin.svg" },
+//   { id: 6, social: "tiktok", img: "./assets/tiktok.svg" },
+//   { id: 7, social: "discord", img: "./assets/discord.svg" },
+// ];
 
 // packages
 var swiper = new Swiper(".mySwiper", {
@@ -44,7 +61,6 @@ var swiper = new Swiper(".mySwiper", {
 // eventlisteners
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    console.log(formStepsNum);
     if (formStepsNum === 0) {
       title.classList.remove("block");
       title.classList.add("hidden");
@@ -94,6 +110,36 @@ prevBtns.forEach((btn) => {
   });
 });
 
+select.addEventListener("click", () => {
+  select.classList.toggle("select-clicked");
+  caret.classList.toggle("rotate-[-90deg]");
+  menu.classList.toggle("menu-open");
+});
+
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    const selectedSpan = selected.querySelector("span");
+    const selectedImg = selected.querySelector("img");
+
+    const optionSpan = option.querySelector("span");
+    const optionImg = option.querySelector("img");
+
+    selectedSpan.innerText = optionSpan.innerText;
+    selectedImg.src = optionImg.src;
+    selectedImg.alt = optionImg.alt;
+
+    select.classList.remove("select-clicked");
+    caret.classList.remove("rotate-[-90deg]");
+    menu.classList.remove("menu-open");
+
+    options.forEach((option) => {
+      option.classList.remove("active");
+    });
+
+    option.classList.add("active");
+  });
+});
+
 // functions
 function updateFormSteps() {
   formSteps.forEach((formStep) => {
@@ -116,3 +162,11 @@ function updateProgressbar() {
 
   progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+// addSocialList(socials);
+// function addSocialList(socials) {
+//   const menu = document.querySelector(".usage-menu");
+//   socials.forEach((el) =>
+//     menu.append(`<li><span>${el.social}</span> <img src="${el.img}" alt="${el.social}" class="h-5 w-5"/></li>`)
+//   );
+// }
