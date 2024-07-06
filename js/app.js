@@ -38,9 +38,6 @@ var swiper = new Swiper(".mySwiper", {
       swiper.slideTo(this.clickedIndex);
     },
   },
-  pagination: {
-    el: ".swiper-pagination",
-  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -111,7 +108,7 @@ prevBtns.forEach((btn) => {
 // usage input selection
 select.addEventListener("click", () => {
   select.classList.toggle("select-clicked");
-  caret.classList.toggle("rotate-[-90deg]");
+  caret.classList.toggle("rotate-[90deg]");
   menu.classList.toggle("menu-open");
 });
 
@@ -128,7 +125,7 @@ options.forEach((option) => {
     selectedImg.alt = optionImg.alt;
 
     select.classList.remove("select-clicked");
-    caret.classList.remove("rotate-[-90deg]");
+    caret.classList.remove("rotate-[90deg]");
     menu.classList.remove("menu-open");
 
     options.forEach((option) => {
@@ -142,7 +139,8 @@ options.forEach((option) => {
 // functions
 function updateFormSteps() {
   formSteps.forEach((formStep) => {
-    formStep.classList.contains("form-step-active") && formStep.classList.remove("form-step-active");
+    formStep.classList.contains("form-step-active") &&
+      formStep.classList.remove("form-step-active");
   });
 
   formSteps[formStepsNum].classList.add("form-step-active");
@@ -159,5 +157,6 @@ function updateProgressbar() {
 
   const progressActive = document.querySelectorAll(".progress-step-active");
 
-  progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+  progress.style.width =
+    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }

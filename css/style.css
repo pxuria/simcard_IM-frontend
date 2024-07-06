@@ -46,7 +46,6 @@ html {
   display: flex;
   justify-content: space-between;
   counter-reset: step;
-  margin: 2rem 0 4rem;
 }
 
 .progressbar::before,
@@ -117,14 +116,18 @@ html {
 
 .form-step {
   display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   max-width: 95%;
   margin-bottom: 2rem;
+  height: 640px;
   /* transform-origin: left;
   animation: animate 0.5s; */
 }
 
 .form-step-active {
-  display: block;
+  display: flex;
 }
 
 .input-group {
@@ -189,7 +192,7 @@ input:not(:placeholder-shown) {
   overflow: hidden;
   position: relative;
   z-index: 0;
-  height: fit-content;
+  height: 90%;
 }
 
 .cricle-card {
@@ -224,7 +227,7 @@ input:not(:placeholder-shown) {
 
 .usage-menu {
   position: absolute;
-  top: 3.25rem;
+  bottom: 3.25rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -374,7 +377,7 @@ input:not(:placeholder-shown) {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  margin-top: 4rem;
+  /* margin-top: auto; */
 }
 
 .btn {
