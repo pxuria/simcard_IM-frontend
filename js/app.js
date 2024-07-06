@@ -13,8 +13,13 @@ const caret = dropdown.querySelector(".caret");
 const menu = dropdown.querySelector(".usage-menu");
 const options = dropdown.querySelectorAll(".usage-menu li");
 const selected = dropdown.querySelector(".selected");
+const paymentCards = document.querySelectorAll(".payment-card");
+const numbers = document.querySelectorAll(".selected-num");
 
 let formStepsNum = 0;
+let payment = "";
+let number = "";
+let formData = { username: "", email: "", number: "", usage: "" };
 
 // packages
 var swiper = new Swiper(".mySwiper", {
@@ -133,6 +138,20 @@ options.forEach((option) => {
     });
 
     option.classList.add("active");
+  });
+});
+
+// payment cards selection
+paymentCards.forEach((item) => {
+  item.addEventListener("click", function () {
+    paymentCards.forEach((el) => el.classList.remove("active"));
+    this.classList.toggle("active");
+  });
+});
+
+numbers.forEach((number) => {
+  number.addEventListener("click", function () {
+    this.classList.toggle("active");
   });
 });
 

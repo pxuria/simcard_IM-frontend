@@ -371,6 +371,18 @@ input:not(:placeholder-shown) {
   top: 100%;
 }
 
+.payment-card.active {
+  border-color: var(--primary);
+}
+
+.selected-num.active {
+  background: var(--primary);
+}
+
+.selected-num.active .validity {
+  color: var(--white);
+}
+
 /* Button */
 .btns-group {
   display: flex;
