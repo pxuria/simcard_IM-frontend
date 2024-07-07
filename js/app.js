@@ -15,10 +15,11 @@ const options = dropdown.querySelectorAll(".usage-menu li");
 const selected = dropdown.querySelector(".selected");
 const paymentCards = document.querySelectorAll(".payment-card");
 const numbers = document.querySelectorAll(".selected-num");
+const form = document.querySelector("form");
 
 let formStepsNum = 0;
 let payment = "";
-let number = "";
+let selectedNumber = "";
 let formData = { username: "", email: "", number: "", usage: "" };
 
 // packages
@@ -81,6 +82,8 @@ nextBtns.forEach((btn) => {
     formStepsNum++;
     updateFormSteps();
     updateProgressbar();
+
+    console.log(selectedNumber);
   });
 });
 
@@ -151,8 +154,16 @@ paymentCards.forEach((item) => {
 
 numbers.forEach((number) => {
   number.addEventListener("click", function () {
+    numbers.forEach((number) => number.classList.remove("active"));
     this.classList.toggle("active");
+    const num = this.querySelector(".number").innerText;
+    selectedNumber = num;
   });
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formDataHandler();
 });
 
 // functions
@@ -178,4 +189,11 @@ function updateProgressbar() {
 
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
+function formDataHandler() {
+  const username = document.getElementById("username");
+  const email = document.getElementById("email");
+  const userNumber = document.getElementById("phone");
+  const usage = document.getElementById("usage");
 }

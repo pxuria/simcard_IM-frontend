@@ -193,6 +193,7 @@ input:not(:placeholder-shown) {
   position: relative;
   z-index: 0;
   height: 90%;
+  width: 100%;
 }
 
 .cricle-card {
@@ -238,7 +239,7 @@ input:not(:placeholder-shown) {
   background-color: #f8f9fa;
   border-radius: 0.5rem;
   overflow: auto;
-  max-height: 10rem;
+  max-height: 12rem;
 }
 
 .usage-menu::-webkit-scrollbar {
@@ -383,6 +384,9 @@ input:not(:placeholder-shown) {
   color: var(--white);
 }
 
+.selected-num {
+  transition: all 300ms ease-in-out;
+}
 /* Button */
 .btns-group {
   display: flex;
