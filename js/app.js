@@ -17,10 +17,14 @@ const paymentCards = document.querySelectorAll(".payment-card");
 const numbers = document.querySelectorAll(".selected-num");
 const form = document.querySelector("form");
 
+const individualForm = document.querySelectorAll(".form-step")[1];
+const individualFormFields =
+  individualForm.querySelectorAll(".input-group input");
+
 let formStepsNum = 0;
 let payment = "";
 let selectedNumber = "";
-let formData = { username: "", email: "", number: "", usage: "" };
+let formData = { username: "", email: "", phone: "", usage: "telegram" };
 
 // packages
 var swiper = new Swiper(".mySwiper", {
@@ -54,11 +58,7 @@ var swiper = new Swiper(".mySwiper", {
 // buttons
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    if (formStepsNum === 0) {
-      if (!selectedNumber) return;
-    }
     nextpage();
-    console.log(selectedNumber);
   });
 });
 
@@ -120,6 +120,21 @@ numbers.forEach((number) => {
   });
 });
 
+individualFormFields.forEach((field) => {
+  field.addEventListener("input", function (e) {
+    const field = this.name;
+    formData[field] = e.target.value;
+
+    const allFieldsFilled = Array.from(individualFormFields).every(
+      (input) => input.value.trim() !== ""
+    );
+    const nextButton = individualForm.querySelector(".btn-next");
+
+    if (allFieldsFilled) nextButton.removeAttribute("disabled");
+    else nextButton.setAttribute("disabled", "");
+  });
+});
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formDataHandler();
@@ -168,11 +183,4 @@ function prevPage() {
   formStepsNum--;
   updateFormSteps();
   updateProgressbar();
-}
-
-function formDataHandler() {
-  const username = document.getElementById("username");
-  const email = document.getElementById("email");
-  const userNumber = document.getElementById("phone");
-  const usage = document.getElementById("usage");
 }
