@@ -17,9 +17,8 @@ const paymentCards = document.querySelectorAll(".payment-card");
 const numbers = document.querySelectorAll(".selected-num");
 const form = document.querySelector("form");
 
-const individualForm = document.querySelectorAll(".form-step")[1];
 const individualFormFields =
-  individualForm.querySelectorAll(".input-group input");
+  formSteps[1].querySelectorAll(".input-group input");
 
 let formStepsNum = 0;
 let payment = "";
@@ -96,6 +95,8 @@ options.forEach((option) => {
     });
 
     option.classList.add("active");
+
+    formData.usage = optionSpan.innerText;
   });
 });
 
@@ -104,6 +105,12 @@ paymentCards.forEach((item) => {
   item.addEventListener("click", function () {
     paymentCards.forEach((el) => el.classList.remove("active"));
     this.classList.toggle("active");
+    payment = this.children[1].innerText;
+    if (payment) {
+      formSteps[2]
+        .querySelector(".btns-group button.btn-next")
+        .removeAttribute("disabled");
+    }
   });
 });
 
@@ -120,6 +127,7 @@ numbers.forEach((number) => {
   });
 });
 
+// individual form
 individualFormFields.forEach((field) => {
   field.addEventListener("input", function (e) {
     const field = this.name;
@@ -128,7 +136,7 @@ individualFormFields.forEach((field) => {
     const allFieldsFilled = Array.from(individualFormFields).every(
       (input) => input.value.trim() !== ""
     );
-    const nextButton = individualForm.querySelector(".btn-next");
+    const nextButton = formSteps[1].querySelector(".btn-next");
 
     if (allFieldsFilled) nextButton.removeAttribute("disabled");
     else nextButton.setAttribute("disabled", "");
