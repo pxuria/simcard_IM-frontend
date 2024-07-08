@@ -55,61 +55,16 @@ var swiper = new Swiper(".mySwiper", {
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (formStepsNum === 0) {
-      title.classList.remove("block");
-      title.classList.add("hidden");
-      // step 1 svg display
-      step1Svg.forEach((svg) => {
-        svg.classList.remove("block");
-        svg.classList.add("hidden");
-      });
-      step2Svg.forEach((svg) => {
-        svg.classList.remove("hidden");
-        svg.classList.add("block");
-      });
+      if (!selectedNumber) return;
     }
-    // step 2 svg display
-    else if (formStepsNum === 1) {
-      step2Svg.forEach((svg) => {
-        svg.classList.remove("block");
-        svg.classList.add("hidden");
-      });
-    }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    formStepsNum++;
-    updateFormSteps();
-    updateProgressbar();
-
+    nextpage();
     console.log(selectedNumber);
   });
 });
 
 prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    formStepsNum--;
-    updateFormSteps();
-    updateProgressbar();
-    if (formStepsNum === 0) {
-      title.classList.remove("hidden");
-      title.classList.add("block");
-      // step 1 svg display
-      step1Svg.forEach((svg) => {
-        svg.classList.remove("hidden");
-        svg.classList.add("block");
-      });
-      step2Svg.forEach((svg) => {
-        console.log("delete step 2");
-        svg.classList.remove("block");
-        svg.classList.add("hidden");
-      });
-    }
+    prevPage();
   });
 });
 
@@ -152,12 +107,16 @@ paymentCards.forEach((item) => {
   });
 });
 
+// number selection
 numbers.forEach((number) => {
   number.addEventListener("click", function () {
     numbers.forEach((number) => number.classList.remove("active"));
     this.classList.toggle("active");
     const num = this.querySelector(".number").innerText;
     selectedNumber = num;
+    const form = document.querySelectorAll(".form-step")[0];
+    if (selectedNumber)
+      form.querySelector(".btns-group button").removeAttribute("disabled");
   });
 });
 
@@ -189,6 +148,26 @@ function updateProgressbar() {
 
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
+function nextpage() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+  formStepsNum++;
+  updateFormSteps();
+  updateProgressbar();
+}
+
+function prevPage() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+  formStepsNum--;
+  updateFormSteps();
+  updateProgressbar();
 }
 
 function formDataHandler() {

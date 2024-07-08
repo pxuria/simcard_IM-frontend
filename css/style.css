@@ -26,6 +26,7 @@ html {
   --yellow: #fecd48;
 }
 
+/* global styles */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -38,6 +39,11 @@ html {
 ::-webkit-scrollbar-thumb {
   background: var(--light-pink);
   border-radius: 16px;
+}
+
+button:disabled {
+  background-color: var(--light-primary);
+  cursor: not-allowed;
 }
 
 /* Progressbar */
