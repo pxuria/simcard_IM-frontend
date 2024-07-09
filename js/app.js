@@ -174,7 +174,7 @@ function updateProgressbar() {
 
 function nextpage() {
   window.scrollTo({
-    top: 75,
+    top: 60,
     behavior: "smooth",
   });
   formStepsNum++;
@@ -184,7 +184,7 @@ function nextpage() {
 
 function prevPage() {
   window.scrollTo({
-    top: 0,
+    top: 60,
     behavior: "smooth",
   });
   formStepsNum--;

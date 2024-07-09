@@ -378,6 +378,18 @@ input:not(:placeholder-shown) {
   top: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .swiper-button-prev {
+    left: 0;
+    top: 90%;
+  }
+
+  .swiper-button-next {
+    right: 0;
+    top: 90%;
+  }
+}
+
 .payment-card.active {
   border-color: var(--primary);
 }
