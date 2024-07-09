@@ -17,8 +17,7 @@ const paymentCards = document.querySelectorAll(".payment-card");
 const numbers = document.querySelectorAll(".selected-num");
 const form = document.querySelector("form");
 
-const individualFormFields =
-  formSteps[1].querySelectorAll(".input-group input");
+const individualFormFields = formSteps[1].querySelectorAll(".input-group input");
 
 let formStepsNum = 0;
 let payment = "";
@@ -97,6 +96,8 @@ options.forEach((option) => {
     option.classList.add("active");
 
     formData.usage = optionSpan.innerText;
+    document.querySelector(".user-usage").innerHTML = selectedImg.alt;
+    document.querySelector(".user-usage-img").src = selectedImg.src;
   });
 });
 
@@ -107,9 +108,7 @@ paymentCards.forEach((item) => {
     this.classList.toggle("active");
     payment = this.children[1].innerText;
     if (payment) {
-      formSteps[2]
-        .querySelector(".btns-group button.btn-next")
-        .removeAttribute("disabled");
+      formSteps[2].querySelector(".btns-group button.btn-next").removeAttribute("disabled");
     }
   });
 });
@@ -122,8 +121,9 @@ numbers.forEach((number) => {
     const num = this.querySelector(".number").innerText;
     selectedNumber = num;
     const form = document.querySelectorAll(".form-step")[0];
-    if (selectedNumber)
-      form.querySelector(".btns-group button").removeAttribute("disabled");
+    if (selectedNumber) form.querySelector(".btns-group button").removeAttribute("disabled");
+
+    document.querySelector(".user-number").innerHTML = selectedNumber;
   });
 });
 
@@ -133,9 +133,10 @@ individualFormFields.forEach((field) => {
     const field = this.name;
     formData[field] = e.target.value;
 
-    const allFieldsFilled = Array.from(individualFormFields).every(
-      (input) => input.value.trim() !== ""
-    );
+    if (field === "username") document.querySelector(".user-username").innerHTML = formData[field];
+    if (field === "email") document.querySelector(".user-email").innerHTML = formData[field];
+    if (field === "phone") document.querySelector(".user-phone").innerHTML = formData[field];
+    const allFieldsFilled = Array.from(individualFormFields).every((input) => input.value.trim() !== "");
     const nextButton = formSteps[1].querySelector(".btn-next");
 
     if (allFieldsFilled) nextButton.removeAttribute("disabled");
@@ -151,8 +152,7 @@ form.addEventListener("submit", (e) => {
 // functions
 function updateFormSteps() {
   formSteps.forEach((formStep) => {
-    formStep.classList.contains("form-step-active") &&
-      formStep.classList.remove("form-step-active");
+    formStep.classList.contains("form-step-active") && formStep.classList.remove("form-step-active");
   });
 
   formSteps[formStepsNum].classList.add("form-step-active");
@@ -169,13 +169,12 @@ function updateProgressbar() {
 
   const progressActive = document.querySelectorAll(".progress-step-active");
 
-  progress.style.width =
-    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+  progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
 
 function nextpage() {
   window.scrollTo({
-    top: 0,
+    top: 75,
     behavior: "smooth",
   });
   formStepsNum++;

@@ -128,8 +128,8 @@ button:disabled {
   max-width: 95%;
   margin-bottom: 2rem;
   height: 640px;
-  /* transform-origin: left;
-  animation: animate 0.5s; */
+  /* transform-origin: left; */
+  animation: animate 2.5s;
 }
 
 .form-step-active {
@@ -182,11 +182,11 @@ input:not(:placeholder-shown) {
 
 @keyframes animate {
   from {
-    transform: scale(0, 1);
+    transform: translateX(-200%);
     opacity: 0;
   }
   to {
-    transform: scale(1, 1);
+    transform: translateX(0);
     opacity: 1;
   }
 }
