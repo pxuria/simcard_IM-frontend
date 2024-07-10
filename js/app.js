@@ -12,7 +12,9 @@ const select = dropdown.querySelector(".select");
 const caret = dropdown.querySelector(".caret");
 const menu = dropdown.querySelector(".usage-menu");
 const options = dropdown.querySelectorAll(".usage-menu li");
-const selected = dropdown.querySelector(".selected");
+const selected = document.querySelector(".selected-social");
+const selectedSpan = selected.querySelector("span");
+const selectedImg = selected.querySelector("img");
 const paymentCards = document.querySelectorAll(".payment-card");
 const numbers = document.querySelectorAll(".selected-num");
 const form = document.querySelector("form");
@@ -22,7 +24,11 @@ const individualFormFields = formSteps[1].querySelectorAll(".input-group input")
 let formStepsNum = 0;
 let payment = "";
 let selectedNumber = "";
-let formData = { username: "", email: "", phone: "", usage: "telegram" };
+let formData = { username: "", email: "", phone: "", usage: selectedSpan.innerText, usageImg: selectedImg.src };
+
+document.querySelector(".user-usage").innerText = formData.usage;
+document.querySelector(".user-usage-img").src = formData.usageImg;
+document.querySelector(".user-usage-img").alt = formData.usage;
 
 // packages
 var swiper = new Swiper(".mySwiper", {
@@ -75,9 +81,6 @@ select.addEventListener("click", () => {
 
 options.forEach((option) => {
   option.addEventListener("click", () => {
-    const selectedSpan = selected.querySelector("span");
-    const selectedImg = selected.querySelector("img");
-
     const optionSpan = option.querySelector("span");
     const optionImg = option.querySelector("img");
 
@@ -89,15 +92,15 @@ options.forEach((option) => {
     caret.classList.remove("rotate-[90deg]");
     menu.classList.remove("menu-open");
 
-    options.forEach((option) => {
-      option.classList.remove("active");
-    });
+    options.forEach((option) => option.classList.remove("active"));
 
     option.classList.add("active");
 
-    formData.usage = optionSpan.innerText;
-    document.querySelector(".user-usage").innerHTML = selectedImg.alt;
+    formData.usage = selectedSpan.innerText;
+    formData.usageImg = selectedImg.src;
+    document.querySelector(".user-usage").innerText = selectedSpan.innerText;
     document.querySelector(".user-usage-img").src = selectedImg.src;
+    document.querySelector(".user-usage-img").alt = selectedImg.alt;
   });
 });
 
@@ -136,6 +139,7 @@ individualFormFields.forEach((field) => {
     if (field === "username") document.querySelector(".user-username").innerHTML = formData[field];
     if (field === "email") document.querySelector(".user-email").innerHTML = formData[field];
     if (field === "phone") document.querySelector(".user-phone").innerHTML = formData[field];
+
     const allFieldsFilled = Array.from(individualFormFields).every((input) => input.value.trim() !== "");
     const nextButton = formSteps[1].querySelector(".btn-next");
 

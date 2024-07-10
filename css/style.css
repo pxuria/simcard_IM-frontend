@@ -129,7 +129,7 @@ button:disabled {
   margin-bottom: 2rem;
   height: 640px;
   /* transform-origin: left; */
-  animation: animate 2.5s;
+  animation: animate 1.5s;
 }
 
 .form-step-active {
@@ -183,7 +183,7 @@ input:not(:placeholder-shown) {
 @keyframes animate {
   from {
     transform: translateX(-200%);
-    opacity: 0;
+    opacity: 0.25;
   }
   to {
     transform: translateX(0);
@@ -323,6 +323,19 @@ input:not(:placeholder-shown) {
 
 .inactive-number {
   color: #d01010;
+}
+
+.selected-num.vip::before {
+  content: "VIP";
+  position: absolute;
+  left: 5%;
+  bottom: 100%;
+  z-index: -1;
+  background: var(--yellow);
+  color: #000;
+  padding-inline: 0.5rem;
+  border-radius: 8px 8px 0 0;
+  font-size: 14px;
 }
 
 .swiper {
