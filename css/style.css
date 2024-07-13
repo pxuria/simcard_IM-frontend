@@ -115,9 +115,14 @@ button:disabled {
 /* Form */
 .form {
   /* width: 600px; */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 85%;
 }
 
 .form-step {
