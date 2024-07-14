@@ -26,6 +26,28 @@ html {
   --yellow: #fecd48;
 }
 
+@keyframes activeAnimate {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes inactiveAnimate {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
 /* global styles */
 ::-webkit-scrollbar {
   width: 7px;
@@ -130,9 +152,16 @@ button:disabled {
   justify-content: space-between;
   flex-direction: column;
   max-width: 95%;
-  margin-bottom: 2rem;
+  margin-bottom: auto;
   height: 640px;
-  animation: animate 1.5s;
+}
+
+.activeAnimate {
+  animation: activeAnimate 1.5s;
+}
+
+.inactiveAnimate {
+  animation: inactiveAnimate 1.5s;
 }
 
 .form-step-active {
@@ -181,17 +210,6 @@ input:not(:placeholder-shown) {
   text-align: right;
   font-size: 18px;
   font-weight: 600;
-}
-
-@keyframes animate {
-  from {
-    transform: translateX(-200%);
-    opacity: 0.25;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 .card-form {
