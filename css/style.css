@@ -153,7 +153,6 @@ button:disabled {
   flex-direction: column;
   max-width: 95%;
   margin-bottom: auto;
-  height: 640px;
 }
 
 .activeAnimate {
@@ -173,7 +172,6 @@ button:disabled {
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-start;
-  width: 45%;
 }
 
 .input-group input {
@@ -429,7 +427,8 @@ input:not(:placeholder-shown) {
 }
 
 .selected-num.active {
-  background: var(--primary);
+  /* background: var(--primary); */
+  background-image: linear-gradient(315deg, #2563eb, #4f46e5, #4f46e5);
 }
 
 .selected-num.active .validity {
@@ -437,7 +436,7 @@ input:not(:placeholder-shown) {
 }
 
 .selected-num {
-  transition: all 300ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 /* Button */
 .btns-group {
@@ -451,12 +450,17 @@ input:not(:placeholder-shown) {
 
 .btn {
   padding: 0.75rem;
-  display: block;
-  text-decoration: none;
-  text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all 300ms ease-out;
+  height: 44px;
+  gap: 0.25rem;
 }
 .btn-next:hover {
   box-shadow: 0 0 0 2px #f8f9fa, 0 0 0 4px var(--primary);
@@ -468,36 +472,19 @@ input:not(:placeholder-shown) {
 
 .btn-prev {
   background-color: var(--yellow);
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  padding-inline: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 300px;
-  height: 45px;
-  transition: all 200ms ease-out;
-  gap: 0.25rem;
+}
+
+.btn span {
+  text-wrap: nowrap;
+  font-weight: 600;
 }
 
 .btn-prev span {
   color: var(--gray);
-  font-weight: 600;
-  font-size: 1rem;
 }
 
 .btn-next {
   background-color: var(--primary);
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  padding-inline: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 300px;
-  height: 45px;
-  transition: all 200ms ease-out;
-  gap: 0.25rem;
 }
 .btn-next:hover {
   background-color: var(--light-primary);
@@ -510,6 +497,4 @@ input:not(:placeholder-shown) {
 
 .btn-next span {
   color: var(--white);
-  font-weight: 600;
-  font-size: 1rem;
 }

@@ -9,7 +9,7 @@
     <title>Registraion Form</title>
   </head>
 
-  <body class="relative min-h-full overflow-hidden overflow-y-auto bg-[#f8f9fa]">
+  <body class="relative min-h-screen w-full overflow-x-hidden overflow-y-auto bg-[#f8f9fa]">
     <!-- top right svg first page -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +69,9 @@
       <img src="./assets/Phone&Sim.svg" alt="" />
     </div>
 
-    <main class="container mx-auto">
+    <main class="container mx-auto overflow-x-hidden overflow-y-auto sm:overflow-y-hidden">
       <!-- Progress bar -->
-      <div class="progressbar w-[80%] md:w-[700px] mx-auto mb-[5rem] mt-4">
+      <div class="progressbar w-[80%] md:w-[700px] mx-auto mb-0 lg:mb-[5rem] mt-4">
         <div class="progress" id="progress"></div>
         <div class="progress-step progress-step-active" data-title="انتخاب شماره"></div>
         <div class="progress-step" data-title="تکمیل فرم اطلاعات"></div>
@@ -81,8 +81,11 @@
       <form class="form">
         <!-- start Steps -->
         <!-- step 1 -->
-        <div class="form-step lg:scale-100 scale-[0.8] form-step-active w-[90%] w-full mx-auto" id="numSelection">
-          <h2 class="text-center font-semibold text-2xl mb-[1rem] text-[#333]" id="title">
+        <div
+          class="form-step h-[640px] lg:scale-100 scale-[0.85] form-step-active w-[90%] w-full mx-auto"
+          id="numSelection"
+        >
+          <h2 class="text-center font-semibold text-2xl mb-[3rem] lg:mb-[1rem] text-[#333]" id="title">
             شماره مد نظر خود را انتخاب نمایید
           </h2>
           <!-- Cards -->
@@ -936,14 +939,14 @@
           </div>
 
           <div class="btns-group">
-            <button type="button" class="btn btn-next mx-auto" disabled>
-              <span> پر کردن فرم اطلاعات </span>
+            <button type="button" class="btn btn-next mx-auto w-[300px]" disabled>
+              <span class="text-base"> پر کردن فرم اطلاعات </span>
             </button>
           </div>
         </div>
 
         <!-- step 2 -->
-        <div class="form-step w-[90%] w-full mx-auto" id="filling">
+        <div class="form-step mt-[4rem] lg:mt-0 h-fit lg:h-[640px] w-full mx-auto" id="filling">
           <div class="card-form py-8 px-6">
             <h3 class="text-center text-2xl mt-4 mb-16 text-[#333] font-semibold" dir="rtl">
               فرم اطلاعات خود را تکمیل نمایید.
@@ -951,10 +954,10 @@
 
             <!-- selected number -->
             <div
-              class="border-2 border-solid border-[#2F68DD] flex flex-row items-center rounded-lg w-fit mx-auto mb-8 bg-[#fff]"
+              class="border-2 border-solid border-[#2F68DD] flex flex-row items-center rounded-lg w-fit mx-auto mb-8 bg-[#fff] scale-[0.8] lg:scale-100"
             >
               <div class="flex items-center gap-2 px-4">
-                <span class="text-[#2F2F2F] font-semibold text-xl select-none">(253) 677-0596</span>
+                <span class="text-[#2F2F2F] font-semibold text-xl select-none text-nowrap">(253) 677-0596</span>
 
                 <!-- cart svg -->
                 <svg
@@ -970,7 +973,7 @@
                   />
                 </svg>
               </div>
-              <span class="bg-[#2F68DD] text-[#f8f9fa] px-4 py-2 h-full select-none">شماره انتخابی</span>
+              <span class="bg-[#2F68DD] text-[#f8f9fa] px-4 py-2 h-full select-none text-nowrap">شماره انتخابی</span>
             </div>
 
             <!-- circle form -->
@@ -997,18 +1000,18 @@
             <img
               src="./assets/sim2.svg"
               alt="simcard"
-              class="absolute top-[-14%] left-[5%] z-[-1] w-[300px] h-[300px]"
+              class="absolute top-[7%] lg:top-[-14%] left-[-20%] lg:left-[5%] z-[-1] w-[300px] h-[300px]"
             />
             <img
               src="./assets/sim2.svg"
               alt="simcard"
-              class="absolute top-[-2%] right-[5%] z-[-1] w-[300px] h-[300px] rotate-[70deg]"
+              class="absolute top-[-2%] lg:top-[-2%] right-[-20%] lg:right-[5%] z-[-1] w-[300px] h-[300px] rotate-[70deg]"
             />
 
             <!-- form -->
-            <div class="flex flex-row justify-center flex-wrap gap-6" dir="rtl">
+            <div class="flex flex-col lg:flex-row justify-center flex-wrap gap-6" dir="rtl">
               <!-- username -->
-              <div class="input-group">
+              <div class="input-group w-full lg:w-[45%]">
                 <label for="username">نام کاربری :</label>
                 <div class="relative w-full">
                   <input type="text" name="username" placeholder="نام کاربری" id="username" />
@@ -1026,7 +1029,7 @@
               </div>
 
               <!-- phone -->
-              <div class="input-group">
+              <div class="input-group w-full lg:w-[45%]">
                 <label for="phone">شماره همراه :</label>
                 <div class="relative w-full">
                   <input type="text" class="" placeholder="0912806423" name="phone" id="phone" />
@@ -1047,7 +1050,7 @@
               </div>
 
               <!-- email -->
-              <div class="input-group mt-2">
+              <div class="input-group w-full lg:w-[45%] mt-2">
                 <label for="email">ایمیل :</label>
                 <div class="relative w-full">
                   <input type="text" name="email" id="email" placeholder="example@gmail.com" />
@@ -1067,7 +1070,7 @@
               </div>
 
               <!-- usage type -->
-              <div class="input-group mt-2">
+              <div class="input-group w-full lg:w-[45%] mt-2">
                 <label for="usage">نوع استفاده :</label>
                 <div class="dropdown w-full relative">
                   <div
@@ -1144,11 +1147,11 @@
 
           <!-- buttons -->
           <div class="btns-group">
-            <button type="button" class="btn btn-prev">
-              <span>بازگشت به صفحه قبل</span>
+            <button type="button" class="btn btn-prev w-[45%] lg:w-[300px]">
+              <span class="text-sm lg:text-base">بازگشت به صفحه قبل</span>
             </button>
-            <button type="button" class="btn btn-next" disabled>
-              <span>تکمیل خرید</span>
+            <button type="button" class="btn btn-next w-[45%] lg:w-[300px]" disabled>
+              <span class="text-sm lg:text-base">تکمیل خرید</span>
             </button>
           </div>
         </div>
@@ -1157,20 +1160,20 @@
         <div class="form-step justify-start mx-auto" id="result">
           <h3 class="text-center text-2xl mt-12 mb-16 text-[#333] font-semibold" dir="rtl">اطلاعات سفارش</h3>
 
-          <div class="w-[480px] bg-[#5b88e4] rounded-2xl py-4 px-2">
+          <div class="w-full md:w-[480px] bg-[#5b88e4] rounded-2xl py-4 px-2">
             <div class="bg-[#f8f9fa] rounded-lg py-3 px-4">
-              <div class="flex flex-row-reverse gap-4 items-center justify-center">
+              <div class="flex flex-col md:flex-row-reverse gap-4 items-center justify-center">
                 <h4 class="text-xl font-semibold" dir="rtl">شماره خریداری شده :</h4>
                 <div class="bg-[#2F68DD] rounded flex items-center justify-center px-3 py-2">
-                  <span class="text-white text-2xl font-semibold user-number"></span>
+                  <span class="text-white text-2xl font-semibold user-number text-nowrap"></span>
                 </div>
               </div>
 
-              <div class="flex items-start justify-between gap-4 flex-row mt-4">
+              <div class="flex flex-col-reverse md:flex-row items-end md:items-start justify-between flex-row mt-4">
                 <img
                   src="./assets/simcardVector.svg"
                   alt="simcardVector"
-                  class="h-auto max-w-full w-[120px]"
+                  class="h-auto max-w-full w-[120px] mr-auto md:mr-0"
                   width="120px"
                   height="150px"
                 />
@@ -1205,9 +1208,9 @@
           <div class="btns-group mt-6">
             <button
               type="button"
-              class="btn text-[#2F68DD] bg-white border-2 border-solid border-[#2f68dd] hover:text-white hover:bg-[#2f68dd] font-medium w-[300px] flex items-center flex-row-reverse gap-2 justify-center"
+              class="btn text-[#2F68DD] bg-white border-2 border-solid border-[#2f68dd] hover:text-white hover:bg-[#2f68dd] font-medium lg:w-[300px] flex-row-reverse gap-2"
             >
-              <span>تماس با پشتیبانی</span>
+              <span class="text-sm lg:text-base">تماس با پشتیبانی</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -1223,15 +1226,15 @@
             </button>
             <button
               type="button"
-              class="btn bg-[#2f68dd] text-white border-2 border-solid border-[#2f68dd] hover:bg-[#fff] hover:text-[#2f68dd] font-medium w-[300px] flex items-center flex-row-reverse gap-2 justify-center"
+              class="btn bg-[#2f68dd] text-white border-2 border-solid border-[#2f68dd] hover:bg-[#fff] hover:text-[#2f68dd] font-medium lg:w-[300px] flex-row-reverse gap-2"
             >
-              <span>پرینت خرید</span>
+              <span class="text-sm lg:text-base">پرینت خرید</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-file-earmark-arrow-down-fill w-5 h-5"
+                class="bi bi-file-earmark-arrow-down-fill w-3 h-3 lg:w-5 lg:h-5"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -1240,9 +1243,6 @@
               </svg>
             </button>
           </div>
-          <!-- <div class="btns-group">
-            <button type="submit" class="btn"></button>
-          </div> -->
         </div>
         <!-- end steps -->
       </form>
